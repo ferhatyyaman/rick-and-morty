@@ -1,0 +1,41 @@
+.character-list-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .character-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .character-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+  
+  }
+  .character-image {
+    width: 200px;
+    height: auto;
+    height: auto;
+   }
+  
+  .character-card span {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .character-card button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
