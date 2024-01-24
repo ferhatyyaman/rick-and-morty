@@ -18,10 +18,6 @@ export default function EpisodeList() {
       dispatch(fetchEpisodesAsync(page));
     }, [dispatch, page]);
   
-    const handleLoadMore = () => {
-      setPage(page + 1);
-    };
-  
   return (
     <div>
         <Navbar/>
@@ -33,18 +29,15 @@ export default function EpisodeList() {
           <li className="episode-card">
           <p className="episode-episode">{episode.episode}</p>
             <span className="episode-name">{episode.name}</span>
-            <p>{episode.air_date}</p>
+            <p className="episode-date">{episode.air_date}</p>
           </li>
         </Link>
         ))}
       </ul>
-      <button className="load-more-button" onClick={handleLoadMore}>
-        Load More
-      </button>
     </div>
 
         
-    <Pagination currentPage={page} totalPages={5} setPage={setPage} />
+    <Pagination currentPage={page} totalPages={3} setPage={setPage} />
     </div>
   )
 }

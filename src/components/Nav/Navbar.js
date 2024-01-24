@@ -12,11 +12,11 @@ export default function Navbar() {
           </Link>
        </div>
     <li className="nav-item">
-        <Link to="/">Home</Link>
+        <Link to="/">Anasayfa</Link>
     </li>
      
       <li className="nav-item">
-        <Link to="/favorite">Favorite</Link>
+        <Link to="/favorite">Favoriler</Link>
     </li>
   
     </ul>

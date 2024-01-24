@@ -1,5 +1,5 @@
 .character-list-container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
   }
   
@@ -10,22 +10,36 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+  .character-link{
+    list-style: none;
+    text-decoration: none;
+    color: #000;
+  }
+  
   .character-card {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    background-color: #fff;
+    border-radius: 5px;
     margin: 10px;
     padding: 10px;
     text-align: center;
     width: 200px;
+    height: 310px;
   
   }
   .character-image {
     width: 200px;
     height: auto;
-    height: auto;
+   }
+   .character-name{
+    font-weight: bold;
+    font-size: 18px;
+    font-style: italic;
+    color: #132d44;
+    white-space: nowrap;            
+    text-overflow: ellipsis; 
    }
   
   .character-card span {
@@ -34,8 +48,16 @@
   }
   
   .character-card button {
-    margin-top: 10px;
+    margin-top: 5px;
     padding: 5px 10px;
     cursor: pointer;
+    border-radius: 5px;
+    background-color: #132d44;
+    color: white;
+    border: none;
+  }
+  
+  .character-card button:hover {
+    background-color: #b8b8b8;
   }
   

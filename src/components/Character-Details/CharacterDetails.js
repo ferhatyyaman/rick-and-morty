@@ -18,12 +18,12 @@ export default function CharacterDetails() {
       <div className="character-details">
         <img className="character-details-image" src={selectedCharacter.image} alt={selectedCharacter.name} />
         <div className='character-details-content'>
-          <p>Name: {selectedCharacter.name}</p>
-          <p>Status: {selectedCharacter.status}</p>
-          <p>Species: {selectedCharacter.species}</p>
-          <p>Gender {selectedCharacter.gender}</p>
-          <p>Type: {selectedCharacter.type}</p>
-          <p>Origin: {selectedCharacter.origin.name}</p>
+          <div className="character-details-name">Name: {selectedCharacter.name}</div>
+          <div className="character-details-name">Status: {selectedCharacter.status}</div>
+          <div className="character-details-name">Species: {selectedCharacter.species}</div>
+          <div className="character-details-name">Gender {selectedCharacter.gender}</div>
+          <div className="character-details-name">Type: {selectedCharacter.type}</div>
+          <div className="character-details-name">Origin: {selectedCharacter.origin.name}</div>
         </div>
       </div>
         </div>

@@ -1,21 +1,33 @@
 .character-details-container {
-    margin: 20px;
+    margin: 120px;
     display: flex;
     justify-content: center;
+    max-width: 1400px;
   }
   
   .character-details {
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 500px;
+    height: 200px;
   }
   
   .character-details-image {
     width: 200px;
-    height: 200px;
+    height: auto;
     margin-right: 20px;
+   
   }
   .character-details-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #132d44;
     font-weight: bold;
+  }
+  .character-details-name{
+    padding: 0 0 5px 10px;
+    font-size: 18px;
   }
   

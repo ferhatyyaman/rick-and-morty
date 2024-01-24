@@ -22,10 +22,9 @@ const episodesSlice = createSlice({
 
 export const { setEpisodes, selectEpisode } = episodesSlice.actions;
 
-// Async Thunks for API calls
-export const fetchEpisodesAsync = (page) => async (dispatch) => {
+export const fetchEpisodesAsync = (page, searchQuery) => async (dispatch) => {
   try {
-    const data = await episodesApi.fetchEpisodes(page);
+    const data = await episodesApi.fetchEpisodes(page, searchQuery);
     dispatch(setEpisodes(data.results));
   } catch (error) {
     console.error('Error fetching episodes:', error);
