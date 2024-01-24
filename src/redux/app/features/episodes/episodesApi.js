@@ -2,9 +2,11 @@ import axios from 'axios';
 
 const BASE_URL = 'https://rickandmortyapi.com/api/';
 
-export const fetchEpisodes = async (page) => {
+export const fetchEpisodes = async (page,searchQuery) => {
   try {
-    const response = await axios.get(`${BASE_URL}episode?page=${page}`);
+    const queryParams = searchQuery ? `&name=${searchQuery}` : '';
+    
+    const response = await axios.get(`${BASE_URL}episode?page=${page}${queryParams}`);
     return response.data;
   } catch (error) {
     console.error('Error fetching episodes:', error);

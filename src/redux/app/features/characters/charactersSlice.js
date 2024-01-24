@@ -21,10 +21,9 @@ const charactersSlice = createSlice({
 
 export const { setCharacters, selectCharacter } = charactersSlice.actions;
 
-// Async Thunks for API calls
-export const fetchCharactersAsync = (page) => async (dispatch) => {
+export const fetchCharactersAsync = (page,searchQuery) => async (dispatch) => {
   try {
-    const data = await charactersApi.fetchCharacters(page);
+    const data = await charactersApi.fetchCharacters(page,searchQuery);
     dispatch(setCharacters(data.results));
   } catch (error) {
     console.error('Error fetching characters:', error);

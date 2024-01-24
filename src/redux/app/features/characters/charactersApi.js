@@ -3,9 +3,11 @@ import axios from 'axios';
 
 const BASE_URL = 'https://rickandmortyapi.com/api/';
 
-export const fetchCharacters = async (page) => {
+export const fetchCharacters = async (page,searchQuery) => {
   try {
-    const response = await axios.get(`${BASE_URL}character?page=${page}`);
+    const queryParams = searchQuery ? `&name=${searchQuery}` : '';
+
+    const response = await axios.get(`${BASE_URL}character?page=${page}${queryParams}`);
     return response.data;
   } catch (error) {
     console.error('Error fetching characters:', error);
