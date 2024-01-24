@@ -10,24 +10,39 @@ export default function Search() {
   const dispatch = useDispatch();
 
   const handleSearch = () => {
-    // Burada arama yapılacak işlemleri ekleyebilirsiniz.
-    // Örneğin, karakter veya bölüm araması yapabilir ve ilgili API'yi çağırabilirsiniz.
-    // Aşağıda sadece konsola bir mesaj bastırılmıştır.
-    console.log('Searching for:', searchQuery);
+    const cleanedQuery = searchQuery.trim();
+    console.log('Searching for:', cleanedQuery);
 
-    // Bu örnekte, her iki sayfa için de arama yapılmasını sağlayan kod:
-    dispatch(fetchEpisodesAsync(1, searchQuery));
-    dispatch(fetchCharactersAsync(1, searchQuery));
+    if (!cleanedQuery) {
+      console.log('Empty search query, fetching all data');
+      dispatch(fetchEpisodesAsync(1));
+      dispatch(fetchCharactersAsync(1));
+    } else {
+      console.log('Non-empty search query, fetching data with search query');
+      dispatch(fetchEpisodesAsync(1, cleanedQuery));
+      dispatch(fetchCharactersAsync(1, cleanedQuery));
+    }
   };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
+  
+
   return (
     <div className="search-container">
-    <input
-      type="text"
-      placeholder="Search..."
-      value={searchQuery}
-      onChange={(e) => setSearchQuery(e.target.value)}
-    />
-    <button onClick={handleSearch}>Search</button>
-  </div>
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        onKeyPress={handleKeyPress}
+
+      />
+      <button onClick={handleSearch}>Search</button>
+    </div>
   )
 }

@@ -1,4 +1,3 @@
-/* src/components/Search/Search.css */
 .search-container {
     display: flex;
     justify-content: center;
@@ -14,7 +13,7 @@
     border-radius: 5px;
   }
   
-  button {
+  .search-container button {
     padding: 10px;
     cursor: pointer;
     border: 1px solid #152616;
@@ -23,7 +22,8 @@
     color: white;
   }
   
-  button:hover {
-    background-color: #45a049;
+
+  .search-container button:hover {
+    background-color: #b8b8b8;
   }
   
